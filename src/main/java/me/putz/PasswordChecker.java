@@ -3,7 +3,7 @@ package me.putz;
 public class PasswordChecker {
 
     public boolean checkPassword(String pw) {
-        return checkPwLen(pw);
+        return checkPwLen(pw) && checkPwUpperLowerCase(pw);
     }
 
     public boolean checkPwLen(String pw) {
@@ -11,6 +11,6 @@ public class PasswordChecker {
     }
 
     public boolean checkPwUpperLowerCase(String pw) {
-        return true;
+        return pw.matches(".*[a-z]+.*") && pw.matches(".*[A-Z]+.*");
     }
 }
