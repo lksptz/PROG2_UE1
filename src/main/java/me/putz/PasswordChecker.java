@@ -24,6 +24,21 @@ public class PasswordChecker {
     }
 
     public boolean checkPwContainsProgressiveNumbers(String pw) {
+        String onlyNumbers = pw.replaceAll("[a-zA-Z()#$?!%/@]", "");
+        int count = 1;
+        int prev = 10; //any number where no digit == prev + 1
+        for (char c : onlyNumbers.toCharArray()){
+            int curr = Integer.parseInt(Character.toString(c));
+            if (curr == prev + 1){
+                count++;
+                if (count == 3) {
+                    return false;
+                }
+            } else {
+                count = 1;
+            }
+            prev = curr;
+        }
         return true;
     }
 }
