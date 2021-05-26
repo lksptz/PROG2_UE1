@@ -20,6 +20,6 @@ public class PasswordChecker {
     }
 
     public boolean checkPwContainsValidSpecialCharacters(String pw) {
-        return true;
+        return pw.matches("([a-zA-Z0-9]*[()#$?!%/@]+)+");
     }
 }
