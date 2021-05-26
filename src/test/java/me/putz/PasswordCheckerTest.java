@@ -87,25 +87,25 @@ public class PasswordCheckerTest {
 
     @Test
     @DisplayName("progressive numbers without numbers")
-    public void checkPwContainsProgressiveNumbers_noNumbers(){
-        assertTrue(pwc.checkPwContainsProgressiveNumbers("noProgressiveNumbers"));
+    public void checkPwContainsValidProgressiveNumbers_noNumbers(){
+        assertTrue(pwc.checkPwContainsValidProgressiveNumbers("noProgressiveNumbers"));
     }
 
     @Test
     @DisplayName("No progressive numbers")
-    public void checkPwContainsProgressiveNumbers_noProgressiveNumbers(){
-        assertTrue(pwc.checkPwContainsProgressiveNumbers("no1Progressive3Numbers2"));
+    public void checkPwContainsValidProgressiveNumbers_noProgressiveNumbers(){
+        assertTrue(pwc.checkPwContainsValidProgressiveNumbers("no1Progressive3Numbers2"));
     }
 
     @Test
     @DisplayName("Valid progressive numbers")
-    public void checkPwContainsProgressiveNumbers_validProgressiveNumbers(){
-        assertTrue(pwc.checkPwContainsProgressiveNumbers("valid1Progressive2Numbers"));
+    public void checkPwContainsValidProgressiveNumbers_validProgressiveNumbers(){
+        assertTrue(pwc.checkPwContainsValidProgressiveNumbers("valid1Progressive2Numbers"));
     }
 
     @Test
     @DisplayName("Has too many progressive numbers")
-    public void checkPwContainsProgressiveNumbers_tooManyProgressiveNumbers(){
-        assertFalse(pwc.checkPwContainsProgressiveNumbers("too1Many2Progressive3Numbers"));
+    public void checkPwContainsValidProgressiveNumbers_tooManyProgressiveNumbers(){
+        assertFalse(pwc.checkPwContainsValidProgressiveNumbers("too1Many2Progressive3Numbers"));
     }
 }

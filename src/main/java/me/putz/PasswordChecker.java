@@ -23,7 +23,7 @@ public class PasswordChecker {
         return pw.matches("^([a-zA-Z\\d]*[()#$?!%/@]+[a-zA-Z\\d]*)+$");
     }
 
-    public boolean checkPwContainsProgressiveNumbers(String pw) {
+    public boolean checkPwContainsValidProgressiveNumbers(String pw) {
         String onlyNumbers = pw.replaceAll("[a-zA-Z()#$?!%/@]", "");
         int count = 1;
         int prev = 10; //any number where no digit == prev + 1
