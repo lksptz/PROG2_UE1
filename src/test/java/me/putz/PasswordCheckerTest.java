@@ -66,4 +66,22 @@ public class PasswordCheckerTest {
     public void checkPwContainsNumbers_enoughNumbers() {
         assertTrue(pwc.checkPwContainsNumbers("enough1Numbers2"));
     }
+
+    @Test
+    @DisplayName("No valid special character")
+    public void checkPwContainsValidSpecialCharacters_noSpecialCharacters(){
+        assertFalse(pwc.checkPwContainsValidSpecialCharacters("noSpecialCharacters"));
+    }
+
+    @Test
+    @DisplayName("Invalid special character")
+    public void checkPwContainsValidSpecialCharacters_invalidSpecialCharacters(){
+        assertFalse(pwc.checkPwContainsValidSpecialCharacters("invalid_special-characters"));
+    }
+
+    @Test
+    @DisplayName("Contains valid special character")
+    public void checkPwContainsValidSpecialCharacters_validSpecialCharacters(){
+        assertTrue(pwc.checkPwContainsValidSpecialCharacters("only(valid)specialChars!"));
+    }
 }

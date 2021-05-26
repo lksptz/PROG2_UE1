@@ -18,4 +18,8 @@ public class PasswordChecker {
     public boolean checkPwContainsNumbers(String pw) {
         return pw.matches(".*\\d.*\\d.*");
     }
+
+    public boolean checkPwContainsValidSpecialCharacters(String pw) {
+        return true;
+    }
 }
