@@ -104,8 +104,32 @@ public class PasswordCheckerTest {
     }
 
     @Test
-    @DisplayName("Has too many progressive numbers")
+    @DisplayName("too many progressive numbers")
     public void checkPwContainsValidProgressiveNumbers_tooManyProgressiveNumbers(){
         assertFalse(pwc.checkPwContainsValidProgressiveNumbers("too1Many2Progressive3Numbers"));
+    }
+
+    @Test
+    @DisplayName("consecutive numbers without numbers")
+    public void checkPwContainsSameNumbersConsecutively_noNumbers(){
+        assertTrue(pwc.checkPwContainsSameNumbersConsecutively("noConsecutiveNumbers"));
+    }
+
+    @Test
+    @DisplayName("no consecutive numbers")
+    public void checkPwContainsSameNumbersConsecutively_noConsecutiveNumbers(){
+        assertTrue(pwc.checkPwContainsSameNumbersConsecutively("noConsecutiveNumbers121212"));
+    }
+
+    @Test
+    @DisplayName("valid amount of consecutive numbers")
+    public void checkPwContainsSameNumbersConsecutively_validConsecutiveNumbers(){
+        assertTrue(pwc.checkPwContainsSameNumbersConsecutively("valid1Consecutive1Numbers1"));
+    }
+
+    @Test
+    @DisplayName("too many consecutive numbers")
+    public void checkPwContainsSameNumbersConsecutively_tooManyConsecutiveNumbers(){
+        assertFalse(pwc.checkPwContainsSameNumbersConsecutively("too1Many1Consecutive1Numbers1"));
     }
 }

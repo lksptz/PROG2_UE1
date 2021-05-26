@@ -41,4 +41,8 @@ public class PasswordChecker {
         }
         return true;
     }
+
+    public boolean checkPwContainsSameNumbersConsecutively(String pw) {
+        return true;
+    }
 }
