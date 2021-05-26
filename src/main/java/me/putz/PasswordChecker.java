@@ -14,7 +14,8 @@ public class PasswordChecker {
         return pw.matches(".*[a-z]+.*") && pw.matches(".*[A-Z]+.*");
     }
 
+    // "Das Kennwort muss Zahlen enthalten." => at least 2 numbers ?
     public boolean checkPwContainsNumbers(String pw) {
-        return true;
+        return pw.matches(".*\\d.*\\d.*");
     }
 }
