@@ -14,6 +14,12 @@ public class PasswordCheckerTest {
     }
 
     @Test
+    @DisplayName("Check invalid password for all rules")
+    public void checkPassword_invalid(){
+        assertFalse(pwc.checkPassword("thisIsN0Val1dPassword!?%end"));
+    }
+
+    @Test
     @DisplayName("Password too short")
     public void checkPwLen_tooShort(){
         assertFalse(pwc.checkPwLen("1234567"));
