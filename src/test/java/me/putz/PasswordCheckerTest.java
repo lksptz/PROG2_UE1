@@ -63,7 +63,7 @@ public class PasswordCheckerTest {
 
     @Test
     @DisplayName("Password contains >=2 numbers")
-    public void checkPwContainsNumbers_enoughNumber() {
+    public void checkPwContainsNumbers_enoughNumbers() {
         assertTrue(pwc.checkPwContainsNumbers("enough1Numbers2"));
     }
 }
