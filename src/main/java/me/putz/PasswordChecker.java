@@ -24,7 +24,7 @@ public class PasswordChecker {
     }
 
     public boolean checkPwContainsValidProgressiveNumbers(String pw) {
-        String onlyNumbers = pw.replaceAll("[a-zA-Z()#$?!%/@]", "");
+        String onlyNumbers = pw.replaceAll("\\D", "");
         int count = 1;
         int prev = 10; //any number where no digit == prev + 1
         for (char c : onlyNumbers.toCharArray()){
@@ -43,6 +43,20 @@ public class PasswordChecker {
     }
 
     public boolean checkPwContainsSameNumbersConsecutively(String pw) {
+        String onlyNumbers = pw.replaceAll("\\D", "");
+        int count = 1;
+        char prev = ' '; //any non digit character
+        for (char c : onlyNumbers.toCharArray()){
+            if (c == prev){
+                count++;
+                if (count == 4) {
+                    return false;
+                }
+            } else {
+                count = 1;
+            }
+            prev = c;
+        }
         return true;
     }
 }
