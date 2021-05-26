@@ -7,7 +7,7 @@ public class PasswordChecker {
     }
 
     public boolean checkPwLen(String pw) {
-        return true;
+        return pw.length() >= 8 && pw.length() <= 25;
     }
 
 }
