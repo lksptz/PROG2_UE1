@@ -3,7 +3,12 @@ package me.putz;
 public class PasswordChecker {
 
     public boolean checkPassword(String pw) {
-        return checkPwLen(pw) && checkPwUpperLowerCase(pw);
+        return checkPwLen(pw) &&
+                checkPwUpperLowerCase(pw) &&
+                checkPwContainsNumbers(pw) &&
+                checkPwContainsValidSpecialCharacters(pw) &&
+                checkPwContainsValidProgressiveNumbers(pw) &&
+                checkPwContainsSameNumbersConsecutively(pw);
     }
 
     public boolean checkPwLen(String pw) {
