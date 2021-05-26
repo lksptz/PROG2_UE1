@@ -48,4 +48,22 @@ public class PasswordCheckerTest {
     public void checkPwUpperLowerCase_upperAndLower(){
         assertTrue(pwc.checkPwUpperLowerCase("upperAndLowerCase"));
     }
+
+    @Test
+    @DisplayName("Password contains no numbers")
+    public void checkPwContainsNumbers_noNumber() {
+        assertFalse(pwc.checkPwContainsNumbers("noNumbers"));
+    }
+
+    @Test
+    @DisplayName("Password contains only one number")
+    public void checkPwContainsNumbers_oneNumber() {
+        assertFalse(pwc.checkPwContainsNumbers("only1Number"));
+    }
+
+    @Test
+    @DisplayName("Password contains >=2 numbers")
+    public void checkPwContainsNumbers_enoughNumber() {
+        assertTrue(pwc.checkPwContainsNumbers("enough1Numbers2"));
+    }
 }

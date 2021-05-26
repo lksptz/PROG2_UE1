@@ -13,4 +13,8 @@ public class PasswordChecker {
     public boolean checkPwUpperLowerCase(String pw) {
         return pw.matches(".*[a-z]+.*") && pw.matches(".*[A-Z]+.*");
     }
+
+    public boolean checkPwContainsNumbers(String pw) {
+        return true;
+    }
 }
