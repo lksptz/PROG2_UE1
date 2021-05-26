@@ -11,15 +11,15 @@ public class PasswordChecker {
     }
 
     public boolean checkPwUpperLowerCase(String pw) {
-        return pw.matches(".*[a-z]+.*") && pw.matches(".*[A-Z]+.*");
+        return pw.matches("^.*[a-z]+.*$") && pw.matches("^.*[A-Z]+.*$");
     }
 
     // "Das Kennwort muss Zahlen enthalten." => at least 2 numbers ?
     public boolean checkPwContainsNumbers(String pw) {
-        return pw.matches(".*\\d.*\\d.*");
+        return pw.matches("^.*\\d.*\\d.*$");
     }
 
     public boolean checkPwContainsValidSpecialCharacters(String pw) {
-        return pw.matches("([a-zA-Z\\d]*[()#$?!%/@]+[a-zA-Z\\d]*)+");
+        return pw.matches("^([a-zA-Z\\d]*[()#$?!%/@]+[a-zA-Z\\d]*)+$");
     }
 }
