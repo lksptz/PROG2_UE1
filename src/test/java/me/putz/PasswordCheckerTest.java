@@ -30,4 +30,22 @@ public class PasswordCheckerTest {
     public void checkPwLen_validLength(){
         assertTrue(pwc.checkPwLen("validLength"));
     }
+
+    @Test
+    @DisplayName("No upper case letters")
+    public void checkPwUpperLowerCase_noUpper(){
+        assertFalse(pwc.checkPwUpperLowerCase("nouppercaseletters"));
+    }
+
+    @Test
+    @DisplayName("No lower case letters")
+    public void checkPwUpperLowerCase_noLower(){
+        assertFalse(pwc.checkPwUpperLowerCase("NOLOWERCASELETTERS"));
+    }
+
+    @Test
+    @DisplayName("Contains upper and lower case letters")
+    public void checkPwUpperLowerCase_upperAndLower(){
+        assertTrue(pwc.checkPwUpperLowerCase("upperAndLowerCase"));
+    }
 }

@@ -10,4 +10,7 @@ public class PasswordChecker {
         return pw.length() >= 8 && pw.length() <= 25;
     }
 
+    public boolean checkPwUpperLowerCase(String pw) {
+        return true;
+    }
 }
