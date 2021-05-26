@@ -18,4 +18,16 @@ public class PasswordCheckerTest {
     public void checkPwLen_tooShort(){
         assertFalse(pwc.checkPwLen("1234567"));
     }
+
+    @Test
+    @DisplayName("Password too long")
+    public void checkPwLen_tooLong(){
+        assertFalse(pwc.checkPwLen("abcdefghijklmnopqrstuvwxyz"));
+    }
+
+    @Test
+    @DisplayName("Password length valid")
+    public void checkPwLen_validLength(){
+        assertTrue(pwc.checkPwLen("validLength"));
+    }
 }
