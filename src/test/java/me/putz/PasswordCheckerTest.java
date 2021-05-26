@@ -84,4 +84,28 @@ public class PasswordCheckerTest {
     public void checkPwContainsValidSpecialCharacters_validSpecialCharacters(){
         assertTrue(pwc.checkPwContainsValidSpecialCharacters("only(valid)specialChars!"));
     }
+
+    @Test
+    @DisplayName("progressive numbers without numbers")
+    public void checkPwContainsProgressiveNumbers_noNumbers(){
+        assertTrue(pwc.checkPwContainsProgressiveNumbers("noProgressiveNumbers"));
+    }
+
+    @Test
+    @DisplayName("No progressive numbers")
+    public void checkPwContainsProgressiveNumbers_noProgressiveNumbers(){
+        assertTrue(pwc.checkPwContainsProgressiveNumbers("no1Progressive3Numbers2"));
+    }
+
+    @Test
+    @DisplayName("Valid progressive numbers")
+    public void checkPwContainsProgressiveNumbers_validProgressiveNumbers(){
+        assertTrue(pwc.checkPwContainsProgressiveNumbers("valid1Progressive2Numbers"));
+    }
+
+    @Test
+    @DisplayName("Has too many progressive numbers")
+    public void checkPwContainsProgressiveNumbers_tooManyProgressiveNumbers(){
+        assertFalse(pwc.checkPwContainsProgressiveNumbers("too1Many2Progressive3Numbers"));
+    }
 }

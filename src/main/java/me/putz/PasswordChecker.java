@@ -22,4 +22,8 @@ public class PasswordChecker {
     public boolean checkPwContainsValidSpecialCharacters(String pw) {
         return pw.matches("^([a-zA-Z\\d]*[()#$?!%/@]+[a-zA-Z\\d]*)+$");
     }
+
+    public boolean checkPwContainsProgressiveNumbers(String pw) {
+        return true;
+    }
 }
